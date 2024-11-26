@@ -1,10 +1,17 @@
 package com.productstore.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.GenerationType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,6 +28,10 @@ public class User implements Serializable {
     public  String phone;
     public  String password;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "client")
+    public List<Order> orders = new ArrayList<>();
+
     public User() {
     }
 
@@ -32,4 +43,5 @@ public class User implements Serializable {
         this.phone = phone;
         this.password = password;
     }
+
 }
