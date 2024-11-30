@@ -23,5 +23,4 @@ public class UserService {
         Optional<User> obj = userRepository.findById(id);
         return obj.get();
     }
-
 }
