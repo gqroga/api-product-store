@@ -50,5 +50,4 @@ public class Order implements Serializable {
             this.orderStatus = orderStatus.getCode();
         }
     }
-
 }
