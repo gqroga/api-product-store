@@ -1,7 +1,6 @@
 package com.productstore.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.productstore.entities.enuns.OrderStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
